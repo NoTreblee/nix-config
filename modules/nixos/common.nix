@@ -58,4 +58,20 @@
 
   # Open SSH port in firewall
   networking.firewall.allowedTCPPorts = [ 22 ];
+
+  environment.systemPackages = with pkgs; [
+  	git curl wget btop ripgrep fd eza bat fzf micro
+  	pkgs."nix-output-monitor"
+  	pkgs."docker-compose"
+  	pkgs."nix-tree"
+	direnv
+  	zoxide
+  	tldr
+  	jq yq
+  	gh
+  	fastfetch
+  	tree
+  	brave
+  ];
+
 }
