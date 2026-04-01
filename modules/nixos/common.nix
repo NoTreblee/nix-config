@@ -45,17 +45,24 @@
   console.keyMap = "pl";
 
   # ---------------------------------------------------------------------------
-  # SSH daemon
+  # Services
   # ---------------------------------------------------------------------------
-  services.openssh = {
-    enable = true;
-    settings = {
-      PasswordAuthentication = true;
-      PermitRootLogin        = "no";
-      X11Forwarding          = false;
+  services = {
+    openssh = {
+      enable = true;
+      settings = {
+        PasswordAuthentication = true;
+        PermitRootLogin        = "no";
+        X11Forwarding          = false;
+      };
+    };
+
+    printing = {
+    	enable = true;
+#    	browsed = true;
     };
   };
-
+  
   # Open SSH port in firewall
   networking.firewall.allowedTCPPorts = [ 22 ];
 
@@ -72,6 +79,8 @@
   	fastfetch
   	tree
   	brave
+	alacritty
+	tailscale
   ];
-
+  services.tailscale.enable = true;
 }
