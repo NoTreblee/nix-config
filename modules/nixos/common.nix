@@ -47,25 +47,13 @@
   # ---------------------------------------------------------------------------
   # Services
   # ---------------------------------------------------------------------------
-  services = {
-    openssh = {
-      enable = true;
-      settings = {
-        PasswordAuthentication = true;
-        PermitRootLogin        = "no";
-        X11Forwarding          = false;
-      };
-    };
 
-    printing = {
-    	enable = true;
+#    printing = {
+#    	enable = true;
 #    	browsed = true;
-    };
-  };
+#    };
+#  };
   
-  # Open SSH port in firewall
-  networking.firewall.allowedTCPPorts = [ 22 ];
-
   environment.systemPackages = with pkgs; [
   	git curl wget btop ripgrep fd eza bat fzf micro
   	pkgs."nix-output-monitor"
