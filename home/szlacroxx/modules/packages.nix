@@ -7,12 +7,12 @@
 
     # devops / cloud
     # kubectl k9s helm terraform terragrunt
-    docker-compose
+    pkgs."docker-compose"
     awscli2
 
     # nix
-    nix-output-monitor
-    nix-tree
+    pkgs."nix-output-monitor"
+    pkgs."nix-tree"
     direnv
 
     # utils

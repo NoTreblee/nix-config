@@ -28,8 +28,8 @@
   # GDK_SCALE=2 makes the GDM login screen readable on the Retina panel.
   # ---------------------------------------------------------------------------
   environment.variables = {
-    GDK_SCALE     = "2";
-    GDK_DPI_SCALE = "0.5";
+#    GDK_SCALE     = "2";
+#    GDK_DPI_SCALE = "0.5";
   };
 
   system.stateVersion = "24.11";

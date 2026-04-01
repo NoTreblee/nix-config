@@ -44,7 +44,7 @@
       nerd-fonts.fira-code
       noto-fonts
       noto-fonts-cjk-sans
-      noto-fonts-emoji
+      noto-fonts-color-emoji
       inter
     ];
     fontconfig.defaultFonts = {
@@ -57,7 +57,7 @@
   # ---------------------------------------------------------------------------
   # PipeWire audio (replaces PulseAudio)
   # ---------------------------------------------------------------------------
-  hardware.pulseaudio.enable = false;
+  services.pulseaudio.enable = false;
   security.rtkit.enable      = true;
 
   services.pipewire = {

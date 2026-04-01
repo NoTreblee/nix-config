@@ -6,7 +6,8 @@
   # DMS-managed files (dms/colors.kdl etc.) are created as empty placeholders
   # by the activation script and populated by 'dms setup' on first login.
   # ---------------------------------------------------------------------------
-  xdg.configFile."niri/config.kdl".text = ''
+  xdg.configFile."niri/config.kdl" = { 
+  text = ''
     environment {
       XDG_CURRENT_DESKTOP         "niri"
       QT_QPA_PLATFORM             "wayland"
@@ -141,7 +142,8 @@
       }
     }
   '';
-
+ force = true;
+ };
   # Create empty DMS placeholder files so the includes above don't fail on
   # first build. 'dms setup' will populate them on first login.
   # Using activation (not xdg.configFile) so DMS can overwrite them freely.

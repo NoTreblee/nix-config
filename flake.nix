@@ -1,5 +1,5 @@
 {
-  description = "Szlacroxx NixOS + Home Manager + Nix-on-Droid config";
+  description = "Szlacroxx NixOS + Home Manager";
 
   inputs = {
     nixpkgs.url = "github:NixOS/nixpkgs/nixos-unstable";
@@ -8,14 +8,9 @@
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
-    nix-on-droid = {
-      url = "github:nix-community/nix-on-droid";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
   };
 
-  outputs = { self, nixpkgs, home-manager, nix-on-droid, ... }:
+  outputs = { self, nixpkgs, home-manager, ... }:
   let
     system = "x86_64-linux";
 
@@ -41,13 +36,6 @@
     nixosConfigurations = {
       mbp = mkHost "mbp";
       snus = mkHost "snus";
-    };
-
-    nixOnDroidConfigurations = {
-      default = nix-on-droid.lib.nixOnDroidConfiguration {  
-        pkgs = import nixpkgs { system = "aarch64-linux"; };
-        modules = [ ./droid/configuration.nix ];
-      };
     };
   };
 }

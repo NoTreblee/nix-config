@@ -1,24 +1,24 @@
 { ... }:
-
 {
   programs.git = {
     enable = true;
-    userName = "NoTreblee";
-    userEmail = "fiercestword@gmail.com"; 
-
-    extraConfig = {
+    settings = {
+      user = {
+        name = "NoTreblee";
+        email = "fiercestword@gmail.com";
+      };
       init.defaultBranch = "main";
       pull.rebase = true;
       push.autoSetupRemote = true;
       core.editor = "micro";
     };
-
-    delta = {
-      enable = true;
-      options = {
-        side-by-side = true;
-        line-numbers = true;
-      };
+  };
+  programs.delta = {
+    enable = true;
+    enableGitIntegration = true;
+    options = {
+      side-by-side = true;
+      line-numbers = true;
     };
   };
 }

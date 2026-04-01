@@ -18,11 +18,11 @@
     plugins = [
       {
         name = "zsh-history-substring-search";
-        src  = pkgs.zsh-history-substring-search;
+        src  = pkgs."zsh-history-substring-search";
       }
     ];
 
-    initExtra = ''
+    initContent = ''
       bindkey '^[[A' history-substring-search-up
       bindkey '^[[B' history-substring-search-down
 
